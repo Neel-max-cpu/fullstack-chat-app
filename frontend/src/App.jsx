@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthStore } from './store/useAuthStore.js';
+import { useThemeStore } from './store/useThemeStore.js';
 
 import Navbar from "./components/Navbar.jsx";
 
@@ -17,6 +18,7 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+  const {theme} = useThemeStore();
 
   useEffect(() => {
     checkAuth()
@@ -35,7 +37,7 @@ function App() {
 
 
   return (
-    <div>
+    <div data-theme={theme}>
 
       <Navbar />
       <Routes>
