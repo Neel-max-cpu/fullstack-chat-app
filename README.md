@@ -1,11 +1,11 @@
 # ✨ Full Stack Realtime Chat App ✨
 
-![Demo App Image 1](/frontend/public/)
-![Demo App Image 2](/frontend/public/)
-![Demo App Image 3](/frontend/public/)
+![Demo App Image 1](/frontend/public/1.png)
+![Demo App Image 2](/frontend/public/2.png)
+![Demo App Image 3](/frontend/public/3.png)
 
 
-## Check the video for the brief of the project without running here  -> [Link]() ⭐
+## Check the video for the brief of the project without running here  -> [Link](https://youtu.be/ps3nn_Y40C4?si=DrbAKblTcfR1qsjp) ⭐
 
 ## Table of Contents
 - [Features](#features)
@@ -23,8 +23,7 @@ Highlights:
 - 🚀 Online user status
 - 👌 Global state management with Zustand
 - 🐞 Error handling both on the server and on the client
-- ⭐ At the end Deployment like a pro for FREE!
-- ⏳ And much more!
+
 
 ## Technologies Used
 - **Frontend**: React.js+vite, Socket.io-client
