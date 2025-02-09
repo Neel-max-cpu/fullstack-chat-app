@@ -1,0 +1,13 @@
+{
+  "name": "chatappnew",
+  "version": "1.0.0",
+  "description": "![Demo App Image 1](/frontend/public/) ![Demo App Image 2](/frontend/public/) ![Demo App Image 3](/frontend/public/)",
+  "main": "index.js",
+  "scripts": {
+    "build":"",
+    "start": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
