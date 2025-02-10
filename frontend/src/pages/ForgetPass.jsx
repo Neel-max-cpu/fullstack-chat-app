@@ -157,7 +157,7 @@ const ForgetPass = () => {
             {/* Right Side - Image/Pattern */}
             <AuthImagePattern
                 title={"You Baka!😤"}
-                subtitle={"Never forget your password! But then again why are we here for let us help you back again."}
+                subtitle={"Never forget your password! But then again why are we here for—let's get you back in😊."}
             />
         </div>
     );
