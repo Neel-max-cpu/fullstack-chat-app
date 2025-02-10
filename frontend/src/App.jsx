@@ -11,6 +11,7 @@ import SignUpPage from "./pages/SignUpPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import SettingsPage from "./pages/SettingsPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
+import ForgetPass from './pages/ForgetPass.jsx';
 
 
 import { LoaderCircle } from 'lucide-react';
@@ -18,9 +19,9 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
   const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
-  const {theme} = useThemeStore();
+  const { theme } = useThemeStore();
 
-  console.log({onlineUsers});
+  console.log({ onlineUsers });
 
   useEffect(() => {
     checkAuth()
@@ -42,15 +43,18 @@ function App() {
     <div data-theme={theme}>
 
       <Navbar />
-      <Routes>
-        <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/login" />} />
-        <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to="/" />} />
-        <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />
-        <Route path="/settings" element={<SettingsPage />} />
-        <Route path="/profile" element={authUser ? <ProfilePage /> : <Navigate to="/login" />} />
-      </Routes>
+      <div className="p-16">
+        <Routes>
+          <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/login" />} />
+          <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to="/" />} />
+          <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />
+          <Route path="/forget" element={<ForgetPass />} />
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/profile" element={authUser ? <ProfilePage /> : <Navigate to="/login" />} />
+        </Routes>
+      </div>
 
-      <Toaster/>
+      <Toaster />
     </div>
   )
 }

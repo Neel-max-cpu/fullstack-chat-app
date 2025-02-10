@@ -75,6 +75,46 @@ export const login = async (req, res) => {
     }
 }
 
+export const forget = async (req, res)=>{
+    const {email, newPassword, confirmPassword } = req.body;
+    try {
+        if(!email || !newPassword || !confirmPassword ){
+            return res.status(400).json({message:"Please fill all the fields!"});
+        }
+
+        const user = await User.findOne({email});
+        // if email not found
+        if(!user) {
+            return res.status(400).json({message:"Invalid credentials"});
+        }
+        
+        // if newpass != confirmpass
+        if(newPassword !== confirmPassword){
+            return res.status(400).json({message:"Passwords do not match!"});
+        }
+        
+        // check if password is same as old password
+        const isSamePassword = await bcrypt.compare(newPassword, user.password);
+        if(isSamePassword){
+            return res.status(400).json({message:"New password must be different from the old password!"});
+        }
+
+        // hash
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+        user.password = hashedPassword;
+        await user.save();
+
+        return res.status(200).json({message:"Password reset successfully!"});
+
+    } catch (error) {
+        console.log("Error in forget password controller:", error.message);
+        res.status(500).json({ message: "Internal Server Error!" });
+    }
+}
+
+
 export const logout = (req, res) => {
     try {
         res.cookie("jwt", "", { maxAge: 0 });

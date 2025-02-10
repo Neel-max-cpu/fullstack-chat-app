@@ -9,6 +9,7 @@ export const useAuthStore = create((set, get) => ({
     authUser: null,
     isSigningUp: false,
     isLoggingIng: false,
+    isForgetIng: false,
     isUpdatingProfile: false,
     onlineUsers: [],
     socket: null,
@@ -61,6 +62,23 @@ export const useAuthStore = create((set, get) => ({
             toast.error(error.response.data.message);
         } finally {
             set({ isLoggingIn: false });
+        }
+    },
+
+    forget: async (data, navigate) =>{        
+        set({isForgetIng:true});
+        try {
+            const res = await axiosInstance.post("/auth/forget", data);            
+            toast.success("Password changed successfully, redirecting to login page!")
+            setTimeout(() => {
+                navigate("/login");
+            }, 3000);
+
+            
+        } catch (error) {
+            toast.error(error.response.data.message);
+        } finally{
+            set({isForgetIng:false});
         }
     },
 
