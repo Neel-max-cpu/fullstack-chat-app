@@ -1,11 +1,12 @@
 {
   "name": "chatappnew",
   "version": "1.0.0",
-  "description": "![Demo App Image 1](/frontend/public/) ![Demo App Image 2](/frontend/public/) ![Demo App Image 3](/frontend/public/)",
+  "description": "Chat app with frontend and backend",
   "main": "index.js",
   "scripts": {
-    "build":"npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "npm run start --prefix backend"
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "node backend/src/index.js",
+    "postinstall": "npm install --prefix backend && npm install --prefix frontend"
   },
   "keywords": [],
   "author": "",
