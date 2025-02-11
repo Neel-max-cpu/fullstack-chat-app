@@ -18,7 +18,7 @@ const Sidebar = () => {
 
   // online only filter
   // const filteredUsers = showOnlineOnly ? users.filter((user) => onlineUsers.includes(user._id)): users;
-  const filteredUsers = users.filter((user)=>{
+  const filteredUsers = (Array.isArray(users) ? users : []).filter((user) => {
     const matchesSearch = user.fullName.toLowerCase().includes(searchQuery.toLowerCase());
     const isOnline = onlineUsers.includes(user._id);
     return showOnlineOnly ? isOnline && matchesSearch : matchesSearch
