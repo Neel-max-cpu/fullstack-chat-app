@@ -30,13 +30,15 @@ function App() {
   console.log({ authUser });
 
   // if no user and loading then loading spinner
-  if (isCheckingAuth && !authUser)
+  // if (isCheckingAuth && !authUser)
+  if (isCheckingAuth){
     return (
       // loading part
       <div className="flex items-center justify-center h-screen">
         <LoaderCircle className='size-16 animate-spin text-red-500' />
       </div>
-    )
+    );
+  }
 
 
   return (
