@@ -50,8 +50,10 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 
-
-
+// default routes
+app.get("/", (req, res)=>{
+    res.json("hello!");
+})
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
