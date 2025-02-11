@@ -26,9 +26,9 @@ const PORT = process.env.PORT;
 
 app.use(cors({
     // origin: "http://localhost:5173",
-    origin: ["https://socialchatapp.vercel.app"],
+    origin: ["https://socialchatapp.vercel.app", "http://localhost:5173"],
+    methods: ['GET, POST, PUT, DELETE, OPTIONS'],
     credentials: true,
-    methods: 'GET, POST, PUT, DELETE',
     allowedHeaders: 'Content-Type, Authorization',
 }));
 // to parse the incoming request with JSON payloads
