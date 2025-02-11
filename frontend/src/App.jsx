@@ -30,8 +30,7 @@ function App() {
   console.log({ authUser });
 
   // if no user and loading then loading spinner
-  // if (isCheckingAuth && !authUser)
-  if (isCheckingAuth){
+  if (isCheckingAuth && !authUser){
     return (
       // loading part
       <div className="flex items-center justify-center h-screen">
