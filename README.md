@@ -66,6 +66,10 @@ or
 npm i
 ```
 
+or directly for better production go to the directory
+```shell
+npm run build
+
 ### Step 4: Setup .env file
 
 ```js

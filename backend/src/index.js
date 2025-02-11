@@ -3,6 +3,10 @@ import dotenv from "dotenv";
 import cookieParser from 'cookie-parser';
 import cors from "cors";
 
+
+// for deployment ---
+import path from "path";
+
 import {connectDB} from "./lib/db.js";
 import authRoutes from "./routes/auth.route.js"
 import messageRoutes from "./routes/message.route.js"
@@ -17,6 +21,8 @@ dotenv.config();
 
 
 const PORT = process.env.PORT;
+// for deployment ---
+const __dirname = path.resolve();
 
 app.use(cors({
     origin:"http://localhost:5173",
@@ -32,6 +38,17 @@ app.use(express.urlencoded({ extended: true, limit: "50mb"}));
 // to parse the cookie
 app.use(cookieParser());
 // since both fronend and backend were running on different ports, we need to enable cors
+
+
+// for deployment ---
+if(process.env.NODE_ENV==="production"){
+    app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+    // if we go any route(*=anyroute) inside dist then we would like our react application 
+    app.get("*", (req, res)=>{  
+        res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+    })
+}
 
 
 
