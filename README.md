@@ -1,5 +1,7 @@
 # ✨ Full Stack Realtime Chat App - Social🌏 ✨
 
+## Check the video for the brief of the project without running here  -> [Link](https://youtu.be/pAeTPGNqEBA) ⭐
+
 ![Demo App Image 1](https://github.com/Neel-max-cpu/fullstack-chat-app/blob/main/frontend/public/1.png?raw=true)
 ![Demo App Image 2](https://github.com/Neel-max-cpu/fullstack-chat-app/blob/main/frontend/public/2.png?raw=true)
 ![Demo App Image 3](https://github.com/Neel-max-cpu/fullstack-chat-app/blob/main/frontend/public/3.png?raw=true)
@@ -8,7 +10,6 @@
 ![Demo App Image 6](https://github.com/Neel-max-cpu/fullstack-chat-app/blob/main/frontend/public/6.png?raw=true)
 
 
-## Check the video for the brief of the project without running here  -> [Link](https://youtu.be/ps3nn_Y40C4?si=DrbAKblTcfR1qsjp) ⭐
 
 ## Table of Contents
 - [Features](#features)
